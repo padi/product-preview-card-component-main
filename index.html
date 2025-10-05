@@ -68,7 +68,11 @@
 
     /*350 w x 750 h - card*/
     .product-card {
+      display: flex;
+      flex-direction: column;
+
       width: 350px;
+      margin: 5em 0;
 
       border-radius: 10px;
       background: #fff;
@@ -142,6 +146,28 @@
 
       color: var(--white);
       font: 700 1em "Montserrat", sans-serif;
+    }
+
+    @media (min-width: 48em) {
+      .product-card {
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        min-width: 600px;
+
+        img.photo, .productdetails {
+          width: 300px;
+        }
+        img.photo {
+          height: 100%;
+        }
+      }
+
+      .productdetails {
+        display: flex;
+        flex-direction:column;
+        justify-content: space-between;
+      }
     }
     </style>
   </head>

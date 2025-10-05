@@ -31,38 +31,89 @@
       --white: hsl(0, 0%, 100%);
       /* paragraph font size */
       font-size: 14px;
+      font-family: Montserrat, serif;
+      color: var(--black);
+    }
+
+    /* resets */
+    body, div, main, section, img, picture, source {
+      margin: 0; padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-      background: var(--white);
+      background: var(--cream);
+      display:flex;
+      justify-content: center;
+      min-height: 100vh;
+      align-items: center;
     }
+
+    /*350 w x 750 h - card*/
+    .product-card {
+      width: 350px;
+
+      border-radius: 10px;
+      background: #fff;
+
+      overflow: hidden;
+
+      /*350 w x 342 h - img*/
+      .photo {
+        width: 350px;
+        height: 342px;
+        object-fit: cover;
+      }
+
+      .productdetails {
+        padding: 2em;
+      }
+
+      .productname {
+        font-family: Fraunces, serif;
+        font-size: 2.4em;
+        line-height: 1;
+      }
+    }
+
+    .category-section {
+      > .category {
+        text-transform: uppercase;
+        font-weight: 300;
+        letter-spacing: 5px;
+        font-size: 12px;
+      }
+    }
+
     </style>
   </head>
   <body>
     <main class="product-card">
-      <picture class="photo">
+      <picture>
         <source
           srcset="./images/image-product-desktop.jpg"
           media="(min-width: 48em)" />
-        <img src="./images/image-product-mobile.jpg" alt="Photo of Gabrielle Essence Eau De Parfum" />
+        <img class='photo' src="./images/image-product-mobile.jpg" alt="Photo of Gabrielle Essence Eau De Parfum" />
       </picture>
 
-      <section>
-        <h2>Perfume</h2>
-      </section>
+      <div class="productdetails">
+        <section class="category-section">
+          <span class="category">Perfume</span>
+        </section>
 
-      <section>
-        <h1>Gabrielle Essence Eau De Parfum</h1>
+        <section>
+          <h1 class="productname">Gabrielle Essence Eau De Parfum</h1>
 
-        <p>A floral, solar and voluptuous interpretation composed by Olivier Polge, 
-          Perfumer-Creator for the House of CHANEL.</p>
+          <p>A floral, solar and voluptuous interpretation composed by Olivier Polge, 
+            Perfumer-Creator for the House of CHANEL.</p>
 
-        <div>
-          <p><strong>Price: </strong><span class="current-price">$149.99</span> <span class="original-price">$169.99</span></p>
-        </div>
+          <div>
+            <p><strong>Price: </strong><span class="current-price">$149.99</span> <span class="original-price">$169.99</span></p>
+          </div>
 
-        <button type="button">Add to Cart</button>
-      </section>
+          <button type="button">Add to Cart</button>
+        </section>
+      </div>
     </main>
   </body>
 </html>

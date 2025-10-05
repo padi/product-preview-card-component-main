@@ -29,11 +29,28 @@
       --grey: hsl(228, 12%, 48%);
       --cream: hsl(30, 38%, 92%);
       --white: hsl(0, 0%, 100%);
-      /* paragraph font size */
+
+      /* fonts */
+      --big: Fraunces, serif;
+      --body-copy: Montserrat, sans-serif;
+
+      /* font defaults */
+      font-family: var(--body-copy);
       font-size: 14px;
-      font-family: Montserrat, serif;
       color: var(--black);
+
+      /* spacing */
+      --space-sm: 0.5rem;
+      --space-md: 1rem;
+      --space-lg: 1.5rem;
+      --space-xl: 2rem;
     }
+
+    .space-xs { margin-bottom: var(--space-xs); }
+    .space-sm { margin-bottom: var(--space-sm); }
+    .space-md { margin-bottom: var(--space-md); }
+    .space-lg { margin-bottom: var(--space-lg); }
+    .space-xl { margin-bottom: var(--space-xl); }
 
     /* resets */
     body, div, main, section, img, picture, source {
@@ -66,14 +83,19 @@
       }
 
       .productdetails {
-        padding: 2em;
+        padding: 2.1em;
       }
 
       .productname {
-        font-family: Fraunces, serif;
+        font-family: var(--big);
         font-size: 2.4em;
         line-height: 1;
       }
+      .productdescription {
+        line-height: 1.5;
+      }
+      /* todo removeme */
+      /* * { border:1px solid blue; } */
     }
 
     .category-section {
@@ -85,6 +107,20 @@
       }
     }
 
+    .prices-block {
+      display: flex;
+      align-items: center;
+      gap: 1em;
+
+      .current-price {
+        font-family: var(--big);
+        font-size: 2.1em;
+        color: var(--green500);
+      }
+      .original-price {
+        text-decoration: line-through;
+      }
+    }
     </style>
   </head>
   <body>
@@ -104,11 +140,11 @@
         <section>
           <h1 class="productname">Gabrielle Essence Eau De Parfum</h1>
 
-          <p>A floral, solar and voluptuous interpretation composed by Olivier Polge, 
+          <p class="productdescription">A floral, solar and voluptuous interpretation composed by Olivier Polge, 
             Perfumer-Creator for the House of CHANEL.</p>
 
-          <div>
-            <p><strong>Price: </strong><span class="current-price">$149.99</span> <span class="original-price">$169.99</span></p>
+          <div class="prices-block">
+            <span class="current-price">$149.99</span> <span class="original-price">$169.99</span>
           </div>
 
           <button type="button">Add to Cart</button>
